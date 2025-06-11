@@ -1,0 +1,13 @@
+version: '2.32.4'
+services:
+  social-app-dev:
+    build: 
+      context: .
+      target: dev
+    container_name: social-app-con-dev
+    env_file:
+      - ./src/config/.env.dev
+    volumes:
+      - ./src:/app/src:ro
+    ports:
+      - "4000:3000"    
